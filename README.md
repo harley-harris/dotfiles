@@ -4,7 +4,7 @@ This is my dotfiles repo which is used to setup my development environment on ne
 
 Some references to help set this up:
 - [Github dotfiles page](https://dotfiles.github.io/)
-- [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/results?search_query=stow+has+forever)
+- [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
 - [NEVER lose dotfiles again with GNU Stow](https://www.youtube.com/watch?v=NoFiYOqnC4o&pp=ygUTbmV2ZXIgbG9zZSBkb3RmaWxlcw%3D%3D)
 
 ## Files
