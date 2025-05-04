@@ -77,7 +77,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+
+plugins=(
+zsh-autosuggestions
+zsh-syntax-highlighting
+z
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +117,47 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+########################################################################
+
+#                              HOMEBREW
+
+export HOMEBREW_PREFIX='/opt/homebrew'
+########################################################################
+
+#                              HISTORY
+
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+########################################################################
+
+#                               fzf
+
+# Setup fzf key bindings and fuzzy completions
+source <(fzf --zsh)
+
+# Aliases used to open fuzzy found files:
+
+alias vim-search='vim $(fzf --preview="bat --color=always {}")'
+
+open_fuzzy_found_file_in_vscode() {
+  local file repo
+  file=$(fzf --preview="bat --color=always {}") || return
+  repo=$(git -C "$(dirname "$file")" rev-parse --show-toplevel) || return
+  code --reuse-window --folder-uri "file://$repo" --goto "$file"
+}
+
+alias code-search=open_fuzzy_found_file_in_vscode
 
 ########################################################################
 

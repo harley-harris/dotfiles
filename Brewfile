@@ -4,7 +4,9 @@ cask_args appdir: '~/Applications'
 # install packages
 tap 'caskroom/homebrew-cask' || true
 brew awscli
+brew bat
 brew cod-cli
+brew fzf
 brew gds-cli
 brew go
 brew nvm
