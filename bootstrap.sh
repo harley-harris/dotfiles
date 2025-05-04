@@ -7,4 +7,8 @@ echo "--> Updating Homebrew..."
 brew update
 
 echo "--> Installing brew packages..."
-brew bundle:wq
+brew bundle
+
+# Create symlinks with all configuration files using stow
+
+stow .
