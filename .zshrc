@@ -78,6 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 plugins=(
 zsh-autosuggestions
 zsh-syntax-highlighting

@@ -19,6 +19,7 @@ brew stow
 brew tfenv
 brew uv
 brew ykman
+brew zsh-vi-mode
 
 # Casks
 

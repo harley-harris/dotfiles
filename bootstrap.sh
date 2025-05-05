@@ -10,5 +10,4 @@ echo "--> Installing brew packages..."
 brew bundle
 
 # Create symlinks with all configuration files using stow
-
 stow .
