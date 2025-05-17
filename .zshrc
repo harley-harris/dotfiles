@@ -150,7 +150,7 @@ source <(fzf --zsh)
 
 # Aliases used to open fuzzy found files:
 
-alias vim-search='vim $(fzf --preview="bat --color=always {}")'
+alias vs='vim $(fzf --preview="bat --color=always {}")'
 
 open_fuzzy_found_file_in_vscode() {
   local file repo
@@ -159,7 +159,7 @@ open_fuzzy_found_file_in_vscode() {
   code --reuse-window --folder-uri "file://$repo" --goto "$file"
 }
 
-alias code-search=open_fuzzy_found_file_in_vscode
+alias cs=open_fuzzy_found_file_in_vscode
 
 ########################################################################
 
